@@ -37,15 +37,11 @@
                 <input type="text" placeholder="" name="titleField" id="titleField">
                 <label for="domainField">Domain name</label>
                 <input type="text" placeholder="" name="domainField" id="domainField">
-                {{/*                <div class="float-right">*/}}
-                {{/*                    <input type="checkbox" name="configureSsl" id="configureSslField">*/}}
-                {{/*                    <label class="label-inline" for="configureSslField">Automatically configure SSL</label>*/}}
-                {{/*                </div>*/}}
                 <div id="hosted">
                     <label for="themeField">Theme</label>
                     <select name="themeField" id="themeField">
-                        {{ range $templateKey, $templateName := .Templates }}
-                            <option value="{{ $templateKey }}">{{ $templateName }}</option>
+                        {{ range $themeKey, $themeName := .Themes }}
+                            <option value="{{ $themeKey }}">{{ $themeName }}</option>
                         {{ end }}
                     </select>
                 </div>
