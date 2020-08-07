@@ -1,3 +1,7 @@
+import Tagify from '@yaireo/tagify'
+import jquery from 'jquery'
+import trumbowyg from 'trumbowyg'
+
 import '../node_modules/trumbowyg/dist/ui/trumbowyg.css'
 import './admin.css'
 
