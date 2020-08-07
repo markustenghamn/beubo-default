@@ -8,10 +8,10 @@
                 <div class="card">
                     <div class="card-body">
                         {{ if .Error }}
-                        <div class="alert alert-danger" role="alert">
-                            {{ .Error }}
-                        </div>
-                         {{ end }}
+                            <div class="alert alert-danger" role="alert">
+                                {{ .Error }}
+                            </div>
+                        {{ end }}
 
                         {{ if .Warning }}
                             <div class="alert alert-warning" role="alert">
@@ -31,7 +31,8 @@
                             <div class="form-group">
                                 <input type="password" class="form-control" name="password" placeholder="Password">
                             </div>
-                            <button type="button" id="sendlogin" class="btn btn-primary" onclick="submit()">login</button>
+                            <button type="button" id="sendlogin" class="btn btn-primary" onclick="submit()">login
+                            </button>
                         </form>
                     </div>
                 </div>

@@ -32,24 +32,24 @@
                 <th></th>
                 <th></th>
             </tr>
-        {{if and (.Extra) (.Extra.sites) }}
-            {{range .Extra.sites}}
-                <tr>
-                    <td>{{ .id }}</td>
-                    <td>{{ .title }}</td>
-                    <td>{{ .domain }}</td>
-                    <td><a class="button" target="_blank" href="//{{ .domain }}">View</a></td>
-                    <td><a class="button" href="/admin/sites/admin/{{ .id }}">Admin</a></td>
-                    <td><a class="button" href="/admin/sites/edit/{{ .id }}">Edit</a></td>
-                    <td><a class="button button-clear" href="/admin/sites/delete/{{ .id }}">Delete</a></td>
-                </tr>
-            {{end}}
+            {{if and (.Extra) (.Extra.sites) }}
+                {{range .Extra.sites}}
+                    <tr>
+                        <td>{{ .id }}</td>
+                        <td>{{ .title }}</td>
+                        <td>{{ .domain }}</td>
+                        <td><a class="button" target="_blank" href="//{{ .domain }}">View</a></td>
+                        <td><a class="button" href="/admin/sites/a/{{ .id }}">Admin</a></td>
+                        <td><a class="button" href="/admin/sites/edit/{{ .id }}">Edit</a></td>
+                        <td><a class="button button-clear" href="/admin/sites/delete/{{ .id }}">Delete</a></td>
+                    </tr>
+                {{end}}
 
-        {{ else }}
-            <tr>
-                <td colspan="3">There are currently no sites</td>
-            </tr>
-        {{ end }}
+            {{ else }}
+                <tr>
+                    <td colspan="3">There are currently no sites</td>
+                </tr>
+            {{ end }}
 
         </table>
     </section>

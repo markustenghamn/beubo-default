@@ -2,7 +2,7 @@
     {{ template "default.admin.header" . }}
 
     <section class="container" id="site-page-new">
-        <a class="button" href="/admin/sites/admin/{{ .Extra.SiteID }}">Back</a>
+        <a class="button" href="/admin/sites/a/{{ .Extra.SiteID }}">Back</a>
 
         {{ if .Error }}
             <div class="alert alert-danger" role="alert">
@@ -28,6 +28,8 @@
                 <input type="text" placeholder="" name="titleField" id="titleField">
                 <label for="slugField">Slug</label>
                 <input type="text" placeholder="" name="slugField" id="slugField">
+                <label for="tagField">Tags</label>
+                <input type="text" placeholder="" name="tagField" id="tagField">
                 <label for="templateField">Template</label>
                 <select name="templateField" id="templateField">
                     {{ range $templateKey, $templateName := .Templates }}

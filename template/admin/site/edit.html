@@ -25,15 +25,18 @@
         <form method="post">
             <fieldset>
                 <label for="typeField">
-                    <input type="radio" id="typeField" name="typeField" onclick="c(this)"{{ if eq .Extra.Type 1 }} checked{{ end }} value="1"> Buebo
+                    <input type="radio" id="typeField" name="typeField"
+                           onclick="c(this)"{{ if eq .Extra.Type 1 }} checked{{ end }} value="1"> Buebo
                     hosted site
                 </label>
                 <label for="typeField">
-                    <input type="radio" id="typeField" name="typeField" onclick="c(this)"{{ if eq .Extra.Type 2 }} checked{{ end }} value="2"> HTML site loaded
+                    <input type="radio" id="typeField" name="typeField"
+                           onclick="c(this)"{{ if eq .Extra.Type 2 }} checked{{ end }} value="2"> HTML site loaded
                     from directory
                 </label>
                 <label for="typeField">
-                    <input type="radio" id="typeField" name="typeField" onclick="c(this)"{{ if eq .Extra.Type 3 }} checked{{ end }} value="3"> Redirect
+                    <input type="radio" id="typeField" name="typeField"
+                           onclick="c(this)"{{ if eq .Extra.Type 3 }} checked{{ end }} value="3"> Redirect
                 </label>
                 <label for="titleField">Title</label>
                 <input type="text" value="{{ .Extra.Title }}" name="titleField" id="titleField">
