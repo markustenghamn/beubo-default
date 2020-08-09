@@ -1,13 +1,19 @@
 {{ define "default.page.plain" }}
-    {{ template "default.header" . }}
+    <!DOCTYPE html>
+    <html lang="en">
+    {{ template "default.head" . }}
+    <body>
 
-    {{block "content" .}}
-        <div class="container">
-            <h2>{{.Title}}</h2>
+    <main class="wrapper">
+        {{ template "default.header" . }}
 
-            {{.Content}}
-        </div>
-    {{ end }}
+        {{block "content" .}}
+            <div class="container">
+                <h2>{{.Title}}</h2>
 
-    {{ template "default.footer" . }}
+                {{.Content}}
+            </div>
+        {{ end }}
+
+        {{ template "default.footer" . }}
 {{ end }}
