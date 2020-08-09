@@ -1,23 +1,33 @@
 {{ define "default.page" }}
-    {{ template "default.header" . }}
+    <!DOCTYPE html>
+    <html lang="en">
+    {{ template "default.head" . }}
+    <body>
 
-    {{block "content" .}}
-        <section class="page-header" id="main-header">
-            <div class="container">
-                <h2>{{.Title}}</h2>
-            </div>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
-                <polygon fill="white" points="0,0 40,100 101,20 101,101 0,101"></polygon>
-            </svg>
-        </section>
+    <main class="wrapper">
+        {{ template "default.header" . }}
 
-        <section id="content-section">
-            <div class="container">
-                {{.Content}}
-            </div>
-        </section>
+        {{block "content" .}}
+            <section class="page-header" id="main-header">
+                <div class="container">
+                    <h2>{{.Title}}</h2>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <polygon fill="white" points="0,0 40,100 101,20 101,101 0,101"></polygon>
+                </svg>
+            </section>
 
-    {{ end }}
+            <section id="content-section">
+                <div class="container">
+                    {{.Content}}
+                </div>
+            </section>
 
-    {{ template "default.footer" . }}
+        {{ end }}
+
+        {{ template "default.footer" . }}
+
+    </main>
+    </body>
+    </html>
 {{ end }}

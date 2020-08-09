@@ -1,58 +1,70 @@
 {{ define "default.admin.home" }}
-    {{ template "default.admin.header" . }}
+    <!DOCTYPE html>
+    <html lang="en">
+    {{ template "default.admin.head" . }}
+    <body>
 
-    <section class="container" id="sites-list">
+    <main class="wrapper">
+        {{ template "default.admin.header" . }}
 
-        {{ if .Error }}
-            <div class="alert alert-danger" role="alert">
-                {{ .Error }}
-            </div>
-        {{ end }}
+        {{ template "default.admin.sidebar" . }}
 
-        {{ if .Warning }}
-            <div class="alert alert-warning" role="alert">
-                {{ .Warning }}
-            </div>
-        {{ end }}
+        <section class="container" id="sites-list">
 
-        {{ if .Message }}
-            <div class="alert alert-info" role="alert">
-                {{ .Message }}
-            </div>
-        {{ end }}
-
-        <a class="button" href="/admin/sites/add/">Add Site</a>
-        <table>
-            <tr>
-                <th>ID</th>
-                <th>Site</th>
-                <th>Domain</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            {{if and (.Extra) (.Extra.sites) }}
-                {{range .Extra.sites}}
-                    <tr>
-                        <td>{{ .id }}</td>
-                        <td>{{ .title }}</td>
-                        <td>{{ .domain }}</td>
-                        <td><a class="button" target="_blank" href="//{{ .domain }}">View</a></td>
-                        <td><a class="button" href="/admin/sites/a/{{ .id }}">Admin</a></td>
-                        <td><a class="button" href="/admin/sites/edit/{{ .id }}">Edit</a></td>
-                        <td><a class="button button-clear" href="/admin/sites/delete/{{ .id }}">Delete</a></td>
-                    </tr>
-                {{end}}
-
-            {{ else }}
-                <tr>
-                    <td colspan="3">There are currently no sites</td>
-                </tr>
+            {{ if .Error }}
+                <div class="alert alert-danger" role="alert">
+                    {{ .Error }}
+                </div>
             {{ end }}
 
-        </table>
-    </section>
+            {{ if .Warning }}
+                <div class="alert alert-warning" role="alert">
+                    {{ .Warning }}
+                </div>
+            {{ end }}
 
-    {{ template "default.footer" . }}
+            {{ if .Message }}
+                <div class="alert alert-info" role="alert">
+                    {{ .Message }}
+                </div>
+            {{ end }}
+
+            <a class="button" href="/admin/sites/add/">Add Site</a>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Site</th>
+                    <th>Domain</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                {{if and (.Extra) (.Extra.sites) }}
+                    {{range .Extra.sites}}
+                        <tr>
+                            <td>{{ .id }}</td>
+                            <td>{{ .title }}</td>
+                            <td>{{ .domain }}</td>
+                            <td><a class="button" target="_blank" href="//{{ .domain }}">View</a></td>
+                            <td><a class="button" href="/admin/sites/a/{{ .id }}">Admin</a></td>
+                            <td><a class="button" href="/admin/sites/edit/{{ .id }}">Edit</a></td>
+                            <td><a class="button button-clear" href="/admin/sites/delete/{{ .id }}">Delete</a></td>
+                        </tr>
+                    {{end}}
+
+                {{ else }}
+                    <tr>
+                        <td colspan="3">There are currently no sites</td>
+                    </tr>
+                {{ end }}
+
+            </table>
+        </section>
+
+        {{ template "default.footer" . }}
+
+    </main>
+    </body>
+    </html>
 {{ end }}
