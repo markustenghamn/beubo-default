@@ -1,15 +1,25 @@
 /* open-sans-regular - latin */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
+html {
+    min-height: 100%;
+}
+
 body {
     font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    min-height: 100vh;
 }
 
 a {
     color: #4a76ca
 }
 
+table {
+    width: unset !important;
+}
+
 .wrapper {
+    min-height: 100%;
     display: block;
     overflow: hidden;
     position: relative;
@@ -25,9 +35,22 @@ a {
     padding-top: 2.5rem
 }
 
+.wrapper .row .column {
+    padding-top: 2rem;
+}
+
 .header {
     background-color: #f4f5f6;
     padding-top: 1rem
+}
+
+.sidebar {
+    background-color: #f4f5f6;
+    padding-left: 5rem !important;
+}
+
+.sidebar li {
+    list-style: none;
 }
 
 @media (min-width: 40rem) {
@@ -232,4 +255,9 @@ select:focus {
 
 *, *:after, *:before {
     box-sizing: initial;
+}
+
+footer {
+    bottom: 0;
+    padding-top: 1rem;
 }

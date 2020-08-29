@@ -10,23 +10,7 @@
         <section class="container" id="site-edit">
             <a class="button" href="/admin/sites/a/{{ .Extra.SiteID }}">Back</a>
 
-            {{ if .Error }}
-                <div class="alert alert-danger" role="alert">
-                    {{ .Error }}
-                </div>
-            {{ end }}
-
-            {{ if .Warning }}
-                <div class="alert alert-warning" role="alert">
-                    {{ .Warning }}
-                </div>
-            {{ end }}
-
-            {{ if .Message }}
-                <div class="alert alert-info" role="alert">
-                    {{ .Message }}
-                </div>
-            {{ end }}
+            {{ template "default.errorhandler" . }}
 
             <form method="post">
                 <fieldset>

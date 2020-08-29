@@ -1,0 +1,28 @@
+{{ define "default.admin.settings" }}
+    <!DOCTYPE html>
+    <html lang="en">
+    {{ template "default.admin.head" . }}
+    <body>
+
+    <main class="wrapper">
+        {{ template "default.admin.header" . }}
+
+        <div class="row">
+            <div class="column column-20 sidebar">
+                {{ template "default.admin.sidebar" . }}
+            </div>
+            <div class="column column-80">
+                <section id="settings-list">
+
+                    {{ template "default.errorhandler" . }}
+
+                </section>
+            </div>
+        </div>
+
+        {{ template "default.footer" . }}
+
+    </main>
+    </body>
+    </html>
+{{ end }}

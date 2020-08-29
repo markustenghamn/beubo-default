@@ -13,23 +13,7 @@
                     <h1>Login</h1>
                     <div class="card">
                         <div class="card-body">
-                            {{ if .Error }}
-                                <div class="alert alert-danger" role="alert">
-                                    {{ .Error }}
-                                </div>
-                            {{ end }}
-
-                            {{ if .Warning }}
-                                <div class="alert alert-warning" role="alert">
-                                    {{ .Warning }}
-                                </div>
-                            {{ end }}
-
-                            {{ if .Message }}
-                                <div class="alert alert-info" role="alert">
-                                    {{ .Message }}
-                                </div>
-                            {{ end }}
+                            {{ template "default.errorhandler" . }}
                             <form action="/login" method="post" autocomplete="off">
                                 <div class="form-group">
                                     <input type="email" class="form-control" name="email" placeholder="Email">

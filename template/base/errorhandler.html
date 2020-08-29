@@ -1,0 +1,19 @@
+{{ define "default.errorhandler" }}
+    {{ if .Error }}
+        <div class="alert alert-danger" role="alert">
+            {{ .Error }}
+        </div>
+    {{ end }}
+
+    {{ if .Warning }}
+        <div class="alert alert-warning" role="alert">
+            {{ .Warning }}
+        </div>
+    {{ end }}
+
+    {{ if .Message }}
+        <div class="alert alert-info" role="alert">
+            {{ .Message }}
+        </div>
+    {{ end }}
+{{ end }}

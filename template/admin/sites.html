@@ -1,0 +1,60 @@
+{{ define "default.admin.sites" }}
+    <!DOCTYPE html>
+    <html lang="en">
+    {{ template "default.admin.head" . }}
+    <body>
+
+    <main class="wrapper">
+        {{ template "default.admin.header" . }}
+
+        <div class="row">
+            <div class="column column-20 sidebar">
+                {{ template "default.admin.sidebar" . }}
+            </div>
+            <div class="column column-80">
+                <section id="sites-list">
+
+                    {{ template "default.errorhandler" . }}
+
+                    <a class="button" href="/admin/sites/add/">Add Site</a>
+                    <table>
+                        <tr>
+                            <th>ID</th>
+                            <th>Site</th>
+                            <th>Domain</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        {{if and (.Extra) (.Extra.sites) }}
+                            {{range .Extra.sites}}
+                                <tr>
+                                    <td>{{ .id }}</td>
+                                    <td>{{ .title }}</td>
+                                    <td>{{ .domain }}</td>
+                                    <td><a class="button" target="_blank" href="//{{ .domain }}">View</a></td>
+                                    <td><a class="button" href="/admin/sites/a/{{ .id }}">Admin</a></td>
+                                    <td><a class="button" href="/admin/sites/edit/{{ .id }}">Edit</a></td>
+                                    <td><a class="button button-clear" href="/admin/sites/delete/{{ .id }}">Delete</a>
+                                    </td>
+                                </tr>
+                            {{end}}
+
+                        {{ else }}
+                            <tr>
+                                <td colspan="3">There are currently no sites</td>
+                            </tr>
+                        {{ end }}
+
+                    </table>
+                </section>
+            </div>
+        </div>
+
+        {{ template "default.footer" . }}
+
+    </main>
+    </body>
+    </html>
+{{ end }}
