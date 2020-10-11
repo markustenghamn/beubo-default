@@ -16,6 +16,25 @@
 
                     {{ template "default.errorhandler" . }}
 
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                        </tr>
+                        {{if and (.Extra) (.Extra.plugins) }}
+                            {{range $key, $value := .Extra.plugins}}
+                                <tr>
+                                    <td>{{ $key }}</td>
+                                </tr>
+                            {{end}}
+
+                        {{ else }}
+                            <tr>
+                                <td colspan="3">There are currently no plugins</td>
+                            </tr>
+                        {{ end }}
+
+                    </table>
+
                     </table>
                 </section>
             </div>

@@ -18,6 +18,32 @@
 
                     <a class="button" href="/admin/users/add/">Add User</a>
 
+                    <table>
+                        <tr>
+                            <th>ID</th>
+                            <th>Email</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        {{if and (.Extra) (.Extra.users) }}
+                            {{range .Extra.users}}
+                                <tr>
+                                    <td>{{ .id }}</td>
+                                    <td>{{ .email }}</td>
+                                    <td><a class="button" href="/admin/users/edit/{{ .id }}">Edit</a></td>
+                                    <td><a class="button button-clear" href="/admin/users/delete/{{ .id }}">Delete</a>
+                                    </td>
+                                </tr>
+                            {{end}}
+
+                        {{ else }}
+                            <tr>
+                                <td colspan="3">There are currently no users</td>
+                            </tr>
+                        {{ end }}
+
+                    </table>
+
                 </section>
             </div>
         </div>
