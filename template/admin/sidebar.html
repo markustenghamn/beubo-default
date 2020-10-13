@@ -1,13 +1,5 @@
 {{ define "default.admin.sidebar" }}
-
     <nav id="sidebar">
-        <ul>
-            {{range $menuItem := .SidebarMenu }}
-                <li class="navigation-item">
-                    <a class="navigation-link" href="{{ $menuItem.Path }}">{{ $menuItem.Title }}</a>
-                </li>
-            {{ end }}
-        </ul>
+        {{ .Menu "sidebar" }}
     </nav>
-
 {{ end }}

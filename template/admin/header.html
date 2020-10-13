@@ -1,20 +1,11 @@
 {{ define "default.admin.header" }}
-
     <nav class="navigation">
         <section class="container">
-
             <a class="navigation-title" href="/admin/">
                 <!-- TODO insert logo? -->
                 <h1 class="title">{{.WebsiteName}} - {{.Title}}</h1>
             </a>
-
-            <ul class="navigation-list float-right">
-                {{range $menuItem := .Menu }}
-                    <li class="navigation-item">
-                        <a class="navigation-link" href="{{ $menuItem.Path }}">{{ $menuItem.Title }}</a>
-                    </li>
-                {{ end }}
-            </ul>
+            {{ .Menu "header" }}
         </section>
     </nav>
-    {{ end }}
+{{ end }}
