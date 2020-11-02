@@ -1,4 +1,4 @@
-{{ define "default.admin.settings" }}
+{{ define "default.admin.page" }}
     <!DOCTYPE html>
     <html lang="en">
     {{ template "default.admin.head" . }}
@@ -12,10 +12,11 @@
                 {{ template "default.admin.sidebar" . }}
             </div>
             <div class="column column-80">
-                <section id="settings-list">
+                <section id="sites-list">
 
                     {{ template "default.errorhandler" . }}
 
+                    {{ .Content "main" }}
                 </section>
             </div>
         </div>
