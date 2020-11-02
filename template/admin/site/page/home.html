@@ -29,7 +29,8 @@
                             <td>{{ .title }}</td>
                             <td>{{ .slug }}</td>
                             <td><a class="button" target="_blank" href="{{ .slug }}">View</a></td>
-                            <td><a class="button" href="/admin/sites/a/{{ $.Extra.SiteID }}/page/edit/{{ .id }}">Edit</a>
+                            <td><a class="button"
+                                   href="/admin/sites/a/{{ $.Extra.SiteID }}/page/edit/{{ .id }}">Edit</a>
                             </td>
                             <td><a class="button button-clear"
                                    href="/admin/sites/a/{{ $.Extra.SiteID }}/page/delete/{{ .id }}">Delete</a></td>
