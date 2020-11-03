@@ -1,3 +1,5 @@
 {{ define "default.component.button" }}
+    {{ if .Link }}<a href="{{ .Link }}">{{ end }}
     <button class="{{ .Class }}">{{ .Content }}</button>
+    {{ if .Link }}</a>{{ end }}
 {{ end }}
