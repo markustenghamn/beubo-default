@@ -8,7 +8,7 @@
   },
   "author": "Markus Tenghamn",
   "license": "ISC",
-  "repository": "https://github.com/markustenghamn/beubo-default",
+  "repository": "https://github.com/uberswe/beubo-default",
   "dependencies": {
     "@yaireo/tagify": "^3.17.1",
     "jquery": "^3.4.0",
