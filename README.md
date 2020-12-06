@@ -1,6 +1,6 @@
 # beubo-default
 
-This is the default theme for [Beubo](https://github.com/markustenghamn/beubo)
+This is the default theme for [Beubo](https://github.com/uberswe/beubo)
 
 Install packages using `npm install` and then use `npm run build` to generate the compiled files for this theme.
 

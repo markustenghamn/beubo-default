@@ -1,0 +1,31 @@
+{{ define "default.admin.setting.edit" }}
+    <!DOCTYPE html>
+    <html lang="en">
+    {{ template "default.admin.head" . }}
+    <body>
+
+    <main class="wrapper">
+        {{ template "default.admin.header" . }}
+
+        <section class="container" id="site-edit">
+            <a class="button" href="/admin/settings">Back</a>
+
+            {{ template "default.errorhandler" . }}
+
+            <form method="post">
+                <fieldset>
+                    <label for="keyField">Key</label>
+                    <input type="text" value="{{ .Extra.Key }}" name="keyField" id="keyField">
+                    <label for="valueField">Value</label>
+                    <input type="text" value="{{ .Extra.Value }}" name="valueField" id="valueField">
+                    <input class="button-primary" type="submit" value="Update">
+                </fieldset>
+            </form>
+        </section>
+
+        {{ template "default.footer" . }}
+
+    </main>
+    </body>
+    </html>
+{{ end }}
