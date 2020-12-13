@@ -1,0 +1,32 @@
+{{ define "default.admin.user.edit" }}
+    <!DOCTYPE html>
+    <html lang="en">
+    {{ template "default.admin.head" . }}
+    <body>
+
+    <main class="wrapper">
+        {{ template "default.admin.header" . }}
+
+        <section class="container" id="user-edit">
+            <a class="button" href="/admin/users">Back</a>
+
+            {{ template "default.errorhandler" . }}
+
+            <form method="post">
+                <fieldset>
+                    <label for="emailField">Email</label>
+                    <input type="text" value="{{ .Extra.Email }}" name="emailField" id="emailField">
+                    <label for="passwordField">Password</label>
+                    <input type="text" value="" placeholder="Only enter a password if you would like to change it"
+                           name="passwordField" id="passwordField">
+                    <input class="button-primary" type="submit" value="Update">
+                </fieldset>
+            </form>
+        </section>
+
+        {{ template "default.footer" . }}
+
+    </main>
+    </body>
+    </html>
+{{ end }}

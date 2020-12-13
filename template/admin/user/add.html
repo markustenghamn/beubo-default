@@ -1,4 +1,4 @@
-{{ define "default.admin.setting.add" }}
+{{ define "default.admin.user.add" }}
     <!DOCTYPE html>
     <html lang="en">
     {{ template "default.admin.head" . }}
@@ -7,17 +7,17 @@
     <main class="wrapper">
         {{ template "default.admin.header" . }}
 
-        <section class="container" id="setting-add">
-            <a class="button" href="/admin/settings">Back</a>
+        <section class="container" id="user-add">
+            <a class="button" href="/admin/users">Back</a>
 
             {{ template "default.errorhandler" . }}
 
             <form method="post">
                 <fieldset>
-                    <label for="keyField">Key</label>
-                    <input type="text" placeholder="" name="keyField" id="keyField">
-                    <label for="valueField">Value</label>
-                    <input type="text" placeholder="" name="valueField" id="valueField">
+                    <label for="emailField">Email</label>
+                    <input type="text" placeholder="" name="emailField" id="emailField">
+                    <label for="passwordField">Password</label>
+                    <input type="password" placeholder="" name="passwordField" id="passwordField">
                     <input class="button-primary" type="submit" value="Add">
                 </fieldset>
             </form>
