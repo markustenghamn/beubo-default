@@ -1,9 +1,9 @@
 {{ define "default.menu.default" }}
-    {{ range .GetItems }}
-        <ul class="navigation-list float-right">
+    <ul class="navigation-list float-right">
+        {{ range .GetItems }}
             <li class="navigation-item">
                 <a class="navigation-link" href="{{ .URI }}">{{ .Text }}</a>
             </li>
-        </ul>
-    {{ end }}
+        {{ end }}
+    </ul>
 {{ end }}

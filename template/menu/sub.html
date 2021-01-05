@@ -1,6 +1,6 @@
-{{ define "default.menu.sidebar" }}
+{{ define "default.menu.sub" }}
     <ul class="navigation-list">
-        {{ range .GetItems }}
+        {{ range .Items }}
             <li class="navigation-item">
                 <a class="navigation-link" href="{{.URI}}">{{.Text}}</a>
                 {{ .SubMenu }}
