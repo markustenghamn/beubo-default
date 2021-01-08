@@ -1,0 +1,29 @@
+{{ define "default.admin.user.role.edit" }}
+    <!DOCTYPE html>
+    <html lang="en">
+    {{ template "default.admin.head" . }}
+    <body>
+
+    <main class="wrapper">
+        {{ template "default.admin.header" . }}
+
+        <section class="container" id="role-edit">
+            <a class="button" href="/admin/users/roles">Back</a>
+
+            {{ template "default.errorhandler" . }}
+
+            <form method="post">
+                <fieldset>
+                    <label for="nameField">Name</label>
+                    <input type="text" value="{{ .Extra.Name }}" placeholder="" name="nameField" id="nameField">
+                    <input class="button-primary" type="submit" value="Update">
+                </fieldset>
+            </form>
+        </section>
+
+        {{ template "default.footer" . }}
+
+    </main>
+    </body>
+    </html>
+{{ end }}

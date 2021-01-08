@@ -1,0 +1,29 @@
+{{ define "default.admin.user.role.add" }}
+    <!DOCTYPE html>
+    <html lang="en">
+    {{ template "default.admin.head" . }}
+    <body>
+
+    <main class="wrapper">
+        {{ template "default.admin.header" . }}
+
+        <section class="container" id="role-add">
+            <a class="button" href="/admin/users/roles">Back</a>
+
+            {{ template "default.errorhandler" . }}
+
+            <form method="post">
+                <fieldset>
+                    <label for="nameField">Name</label>
+                    <input type="text" placeholder="" name="nameField" id="nameField">
+                    <input class="button-primary" type="submit" value="Add">
+                </fieldset>
+            </form>
+        </section>
+
+        {{ template "default.footer" . }}
+
+    </main>
+    </body>
+    </html>
+{{ end }}
