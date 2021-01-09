@@ -16,6 +16,11 @@
                 <fieldset>
                     <label for="nameField">Name</label>
                     <input type="text" placeholder="" name="nameField" id="nameField">
+                    {{ range .Extra }}
+                        <label for="featureField{{ .ID }}">{{ .Key }} <input id="featureField{{ .ID }}" type="checkbox"
+                                                                             name="featureField[]"
+                                                                             value="{{ .ID }}"></label>
+                    {{ end }}
                     <input class="button-primary" type="submit" value="Add">
                 </fieldset>
             </form>

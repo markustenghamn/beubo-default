@@ -15,10 +15,22 @@
             <form method="post">
                 <fieldset>
                     <label for="emailField">Email</label>
-                    <input type="text" value="{{ .Extra.Email }}" name="emailField" id="emailField">
+                    <input type="text" value="{{ .Extra.User.Email }}" name="emailField" id="emailField">
                     <label for="passwordField">Password</label>
                     <input type="text" value="" placeholder="Only enter a password if you would like to change it"
                            name="passwordField" id="passwordField">
+                    <h3>Roles</h3>
+                    {{ range .Extra.Roles }}
+                        <label for="roleField{{ .Role.ID }}">{{ .Role.Name }} <input id="roleField{{ .Role.ID }}"
+                                                                                     type="checkbox" name="roleField[]"
+                                                                                     value="{{ .Role.ID }}"{{ if .Checked }} checked{{end}}></label>
+                    {{ end }}
+                    <h3>Sites</h3>
+                    {{ range .Extra.Sites }}
+                        <label for="siteField{{ .Site.ID }}">{{ .Site.Title }} <input id="siteField{{ .Site.ID }}"
+                                                                                      type="checkbox" name="siteField[]"
+                                                                                      value="{{ .Site.ID }}"{{ if .Checked }} checked{{end}}></label>
+                    {{ end }}
                     <input class="button-primary" type="submit" value="Update">
                 </fieldset>
             </form>

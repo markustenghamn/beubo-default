@@ -18,6 +18,18 @@
                     <input type="text" placeholder="" name="emailField" id="emailField">
                     <label for="passwordField">Password</label>
                     <input type="password" placeholder="" name="passwordField" id="passwordField">
+                    <br/>
+                    <h3>Roles</h3>
+                    {{ range .Extra.Roles }}
+                        <label for="roleField{{ .ID }}">{{ .Name }} <input id="roleField{{ .ID }}" type="checkbox"
+                                                                           name="roleField[]" value="{{ .ID }}"></label>
+                    {{ end }}
+                    <h3>Sites</h3>
+                    {{ range .Extra.Sites }}
+                        <label for="siteField{{ .ID }}">{{ .Title }} <input id="siteField{{ .ID }}" type="checkbox"
+                                                                            name="siteField[]"
+                                                                            value="{{ .ID }}"></label>
+                    {{ end }}
                     <input class="button-primary" type="submit" value="Add">
                 </fieldset>
             </form>
