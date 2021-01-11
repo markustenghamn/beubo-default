@@ -21,11 +21,6 @@
                     </label>
                     <label for="typeField">
                         <input type="radio" id="typeField" name="typeField"
-                               onclick="c(this)"{{ if eq .Extra.Type 2 }} checked{{ end }} value="2"> HTML site loaded
-                        from directory
-                    </label>
-                    <label for="typeField">
-                        <input type="radio" id="typeField" name="typeField"
                                onclick="c(this)"{{ if eq .Extra.Type 3 }} checked{{ end }} value="3"> Redirect
                     </label>
                     <label for="titleField">Title</label>
@@ -58,26 +53,21 @@
 
             function c(r) {
                 let hosted = document.getElementById ("hosted");
-                let html = document.getElementById ("html");
                 let redirect = document.getElementById ("redirect");
                 switch (r.value) {
                     case "1":
-                        h (hosted, html, redirect);
-                        break;
-                    case "2":
-                        h (html, hosted, redirect);
+                        h (hosted, redirect);
                         break;
                     case "3":
-                        h (redirect, hosted, html);
+                        h (redirect, hosted);
                         break;
                 }
             }
 
             // shows the first element and hides the other 2
-            function h(x, y, z) {
+            function h(x, y) {
                 x.style.display = "block";
                 y.style.display = "none";
-                z.style.display = "none";
             }
         </script>
 

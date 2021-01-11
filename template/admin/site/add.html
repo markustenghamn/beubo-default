@@ -19,11 +19,6 @@
                         hosted site
                     </label>
                     <label for="typeField">
-                        <input type="radio" id="typeField" name="typeField" onclick="c(this)" value="2"> HTML site
-                        loaded
-                        from directory
-                    </label>
-                    <label for="typeField">
                         <input type="radio" id="typeField" name="typeField" onclick="c(this)" value="3"> Redirect
                     </label>
                     <label for="titleField">Title</label>
@@ -37,10 +32,6 @@
                                 <option value="{{ $themeKey }}">{{ $themeName }}</option>
                             {{ end }}
                         </select>
-                    </div>
-                    <div id="html" style="display: none;">
-                        <label for="pathField">Local path</label>
-                        <input type="text" placeholder="/var/www/html/" name="pathField" id="pathField">
                     </div>
                     <div id="redirect" style="display: none;">
                         <label for="destinationField">Destination domain</label>
@@ -56,26 +47,21 @@
 
             function c(r) {
                 let hosted = document.getElementById ("hosted");
-                let html = document.getElementById ("html");
                 let redirect = document.getElementById ("redirect");
                 switch (r.value) {
                     case "1":
-                        h (hosted, html, redirect);
-                        break;
-                    case "2":
-                        h (html, hosted, redirect);
+                        h (hosted, redirect);
                         break;
                     case "3":
-                        h (redirect, hosted, html);
+                        h (redirect, hosted);
                         break;
                 }
             }
 
             // shows the first element and hides the other 2
-            function h(x, y, z) {
+            function h(x, y) {
                 x.style.display = "block";
                 y.style.display = "none";
-                z.style.display = "none";
             }
         </script>
 
