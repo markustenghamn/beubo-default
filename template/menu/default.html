@@ -1,5 +1,26 @@
 {{ define "default.menu.default" }}
-    <ul class="navigation-list float-right">
+
+    <script>
+        function openMobileMenu(){
+            document.querySelector('nav ul.navigation-list.top-menu').classList.add('show-mobile-menu');
+            document.querySelector('.mobile-menu-open').classList.add('hidden');
+            document.querySelector('.mobile-menu-close').classList.remove('hidden');
+        }
+
+        function closeMobileMenu(){
+            document.querySelector('nav ul.navigation-list.top-menu').classList.remove('show-mobile-menu');
+            document.querySelector('.mobile-menu-open').classList.remove('hidden');
+            document.querySelector('.mobile-menu-close').classList.add('hidden');
+        }
+    </script>
+
+    <div class="mobile-menu-open" onclick="openMobileMenu()">
+        <img src="http://widevisiondesign.com/temp-beubo/menu-light.svg">
+    </div>
+    <div class="mobile-menu-close hidden" onclick="closeMobileMenu()">
+        <img src="http://widevisiondesign.com/temp-beubo/close-light.svg">
+    </div>
+    <ul class="navigation-list top-menu float-right">
         {{ range .GetItems }}
             <li class="navigation-item">
                 <a class="navigation-link" href="{{ .URI }}">{{ .Text }}</a>

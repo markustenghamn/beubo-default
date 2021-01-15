@@ -8,20 +8,61 @@
         {{ template "default.admin.header" . }}
 
         <div class="row">
-            <div class="column column-20 sidebar">
+            <div class="column column-20 sidebar closed-on-mobile">
                 {{ template "default.admin.sidebar" . }}
+                {{ template "default.footer" . }}
             </div>
             <div class="column column-80">
-                <section id="sites-list">
 
-                    {{ template "default.errorhandler" . }}
+                <div class="content-wrapper">
+                    <div class="page-meta">
+                        <h2 class="title">{{.Title}}</h2>
 
-                    {{ .Content "main" }}
-                </section>
+                        <p class="breadcrumb">
+                            <span>Item</span>
+                            <span>Item</span>
+                            <span>Item</span>
+                        </p>
+                    </div>
+
+                    <section class="content-box" id="sites-list">
+
+                        {{ template "default.errorhandler" . }}
+
+                        {{ .Content "main" }}
+
+                        <!--<table class="sample-table">
+                            <tr>
+                                <th>ID</th>
+                                <th>Site</th>
+                                <th>Domain</th>
+                                <th>Action</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>www.site.com</td>
+                                <td>site.com</td>
+                                <td>
+                                    <button class="table-action">Action</button>
+                                    <button class="table-action">Action</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>www.site.com</td>
+                                <td>site.com</td>
+                                <td>
+                                    <button class="table-action">Action</button>
+                                    <button class="table-action">Action</button>
+                                </td>
+                            </tr>
+                        </table>-->
+
+                    </section>
+                </div>
+
             </div>
         </div>
-
-        {{ template "default.footer" . }}
 
     </main>
     </body>

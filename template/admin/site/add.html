@@ -7,18 +7,18 @@
     <main class="wrapper">
         {{ template "default.admin.header" . }}
 
-        <section class="container" id="site-add">
+        <section class="container content-box margin-top" id="site-add">
             <a class="button" href="/admin/">Back</a>
 
             {{ template "default.errorhandler" . }}
 
             <form method="post">
                 <fieldset>
-                    <label for="typeField">
+                    <label class="radio" for="typeField">
                         <input type="radio" id="typeField" name="typeField" onclick="c(this)" checked value="1"> Buebo
                         hosted site
                     </label>
-                    <label for="typeField">
+                    <label class="radio" for="typeField">
                         <input type="radio" id="typeField" name="typeField" onclick="c(this)" value="3"> Redirect
                     </label>
                     <label for="titleField">Title</label>

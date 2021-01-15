@@ -1,9 +1,9 @@
 {{ define "default.footer" }}
     <footer class="footer">
-        <section class="container">
-            <p><a href="https://github.com/uberswe/beubo" target="_blank">View on Github</a> | Powered by <a
-                        target="_blank" href="https://beubo.com">Beubo</a>.</p>
-        </section>
+        <div class="elements">
+            <a href="https://github.com/uberswe/beubo" target="_blank"><img src="http://widevisiondesign.com/temp-beubo/github.svg"></a>
+            <a target="_blank" href="https://beubo.com"><img src="http://widevisiondesign.com/temp-beubo/internet.svg"></a>
+        </div>
     </footer>
     {{range $script := .Scripts }}
         <script src="{{ $script }}"></script>

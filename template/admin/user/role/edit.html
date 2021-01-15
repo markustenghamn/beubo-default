@@ -7,7 +7,7 @@
     <main class="wrapper">
         {{ template "default.admin.header" . }}
 
-        <section class="container" id="role-edit">
+        <section class="container content-box margin-top" id="role-edit">
             <a class="button" href="/admin/users/roles">Back</a>
 
             {{ template "default.errorhandler" . }}
@@ -17,10 +17,11 @@
                     <label for="nameField">Name</label>
                     <input type="text" value="{{ .Extra.Role.Name }}" placeholder="" name="nameField" id="nameField">
                     {{ range .Extra.Features }}
-                        <label for="featureField{{ .Feature.ID }}">{{ .Feature.Key }} <input
+                        <label class="checkbox" for="featureField{{ .Feature.ID }}">{{ .Feature.Key }} <input
                                     id="featureField{{ .Feature.ID }}" type="checkbox" name="featureField[]"
                                     value="{{ .Feature.ID }}"{{ if .Checked }} checked{{end}}></label>
                     {{ end }}
+                    <br><br>
                     <input class="button-primary" type="submit" value="Update">
                 </fieldset>
             </form>

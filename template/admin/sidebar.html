@@ -1,5 +1,46 @@
 {{ define "default.admin.sidebar" }}
+
+    <script type="text/javascript">
+        function showDropdown(id){
+            var element_name = "dropdown-" + id + "-content";
+            var element = document.getElementsByClassName(element_name)[0];
+            element.classList.remove('hidden');
+            document.querySelector('.open-'+id).classList.add('hidden');
+            document.querySelector('.close-'+id).classList.remove('hidden');
+        }
+
+        function hideDropdown(id){
+            var element_name = "dropdown-" + id + "-content";
+            var element = document.getElementsByClassName(element_name)[0];
+            element.classList.add('hidden');
+            document.querySelector('.open-'+id).classList.remove('hidden');
+            document.querySelector('.close-'+id).classList.add('hidden');
+        }
+    </script>
+
     <nav id="sidebar">
-        {{ .Menu "sidebar" }}
+        <!--{{ .Menu "sidebar" }}-->
+
+        <ul class="navigation-list">
+            <li class="navigation-item">
+                <a class="navigation-link" href="/admin/">Sites</a>
+            </li>
+            <li class="navigation-item">
+                <a class="navigation-link" href="/admin/settings">Settings</a>
+            </li>
+            <li class="navigation-item dropdown">
+                <a class="navigation-link" href="/admin/users">Users</a>
+                <span class="open-dropdown open-1" onclick="showDropdown(1)"></span>
+                <span class="close-dropdown close-1 hidden" onclick="hideDropdown(1)"></span>
+                <ul class="navigation-list dropdown-1-content hidden">
+                    <li class="navigation-item">
+                        <a class="navigation-link" href="/admin/users/roles">Roles</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="navigation-item">
+                <a class="navigation-link" href="/admin/plugins">Plugins</a>
+            </li>
+        </ul>
     </nav>
 {{ end }}

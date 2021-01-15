@@ -7,7 +7,7 @@
     <main class="wrapper">
         {{ template "default.admin.header" . }}
 
-        <section class="container" id="user-edit">
+        <section class="container content-box margin-top" id="user-edit">
             <a class="button" href="/admin/users">Back</a>
 
             {{ template "default.errorhandler" . }}
@@ -21,16 +21,17 @@
                            name="passwordField" id="passwordField">
                     <h3>Roles</h3>
                     {{ range .Extra.Roles }}
-                        <label for="roleField{{ .Role.ID }}">{{ .Role.Name }} <input id="roleField{{ .Role.ID }}"
+                        <label class="checkbox" for="roleField{{ .Role.ID }}">{{ .Role.Name }} <input id="roleField{{ .Role.ID }}"
                                                                                      type="checkbox" name="roleField[]"
                                                                                      value="{{ .Role.ID }}"{{ if .Checked }} checked{{end}}></label>
                     {{ end }}
                     <h3>Sites</h3>
                     {{ range .Extra.Sites }}
-                        <label for="siteField{{ .Site.ID }}">{{ .Site.Title }} <input id="siteField{{ .Site.ID }}"
+                        <label class="checkbox" for="siteField{{ .Site.ID }}">{{ .Site.Title }} <input id="siteField{{ .Site.ID }}"
                                                                                       type="checkbox" name="siteField[]"
                                                                                       value="{{ .Site.ID }}"{{ if .Checked }} checked{{end}}></label>
                     {{ end }}
+                    <br>
                     <input class="button-primary" type="submit" value="Update">
                 </fieldset>
             </form>
