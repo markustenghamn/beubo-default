@@ -299,7 +299,7 @@ footer {
 
 .open-dropdown{
     display: inline-block;
-    background-image: url(http://widevisiondesign.com/temp-beubo/arrow-down.svg);
+    background-image: url(/default/images/arrow-down.svg);
     background-size: cover;
     height: 14px;
     width: 14px;
@@ -308,7 +308,7 @@ footer {
 
 .close-dropdown{
     display: inline-block;
-    background-image: url(http://widevisiondesign.com/temp-beubo/arrow-up.svg);
+    background-image: url(/default/images/arrow-up.svg);
     background-size: cover;
     height: 14px;
     width: 14px;
