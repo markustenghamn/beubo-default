@@ -1,10 +1,4 @@
 :root {
-    --primary-color: #7560FF;
-    --secondary-color: #F27AE4;
-    --light-gray: #EAEEF4;
-    --text: #37444E;
-    --text-color: #2F2860;
-    --text-light: #90969b;
     color-scheme: light dark; /* both supported */
 }
 
@@ -18,17 +12,17 @@ body {
 
 @media (prefers-color-scheme: light) {
     body {
-        color: var(--text);
+        color: #37444E;
         font-family: 'Trebuchet MS', sans-serif;
         font-size: 1.6em;
         font-weight: 300;
         letter-spacing: .01em;
         line-height: 1.6;
-        background-color: var(--light-gray);
+        background-color: #EAEEF4;
     }
 
     a {
-        color: var(--text-color);
+        color: #2F2860;
     }
 }
 
@@ -44,7 +38,7 @@ body {
     }
 
     a {
-        color: var(--text-light);
+        color: #90969b;
     }
 }
 
@@ -287,6 +281,11 @@ select:focus {
     box-sizing: initial;
 }
 
+.row .column.column-80 {
+    flex: none;
+    max-width: 80%;
+}
+
 footer {
     bottom: 0;
     padding-top: 1rem;
@@ -299,7 +298,7 @@ footer {
 
 .open-dropdown{
     display: inline-block;
-    background-image: url(/default/images/arrow-down.svg);
+    background-image: url(images/arrow-down.svg);
     background-size: cover;
     height: 14px;
     width: 14px;
@@ -308,7 +307,7 @@ footer {
 
 .close-dropdown{
     display: inline-block;
-    background-image: url(/default/images/arrow-up.svg);
+    background-image: url(images/arrow-up.svg);
     background-size: cover;
     height: 14px;
     width: 14px;
@@ -403,7 +402,7 @@ nav#sidebar{
 }
 
 .sidebar .navigation-list .navigation-item a{
-    color: var(--text-light);
+    color: #90969b;
     font-size: 18px;
 }
 
@@ -439,7 +438,7 @@ nav#sidebar{
     }
 
     .navigation .navigation-link{
-        color: var(--text-color);
+        color: #2F2860;
         font-weight: 600 !important;
     }
 }
@@ -544,7 +543,7 @@ nav#sidebar{
 @media (prefers-color-scheme: light){
     h2.title{
         font-weight: 600;
-        color: var(--text-color);
+        color: #2F2860;
         font-size: 22px;
     }
 }
@@ -558,7 +557,7 @@ nav#sidebar{
 }
 
 .breadcrumb{
-    color: var(--text-light);
+    color: #90969b;
     font-weight: 400;
 }
 
@@ -599,7 +598,7 @@ nav#sidebar{
         font-size: 26px;
         font-weight: 500;
         margin-bottom: 10px;
-        color: var(--text-color);
+        color: #2F2860;
         margin-top: 20px;
     }
 }
@@ -619,21 +618,21 @@ nav#sidebar{
 }
 
 .button, button, input[type='button'], input[type='reset'], input[type='submit']{
-    background-color: var(--primary-color);
-    border: 1px solid var(--primary-color);
+    background-color: #7560FF;
+    border: 1px solid #7560FF;
     color: white;
     text-transform: uppercase;
 }
 
 .button:hover, button:hover, input[type='button']:hover, input[type='reset']:hover, input[type='submit']:hover{
     background-color: white;
-    color: var(--primary-color);
-    border: 1px solid var(--primary-color);
+    color: #7560FF;
+    border: 1px solid #7560FF;
     transition: 0.2s;
 }
 
 table tr th{
-    color: var(--text-light);
+    color: #90969b;
     font-weight: 400;
     border-bottom: 0px;
 }
@@ -642,7 +641,7 @@ table tr th{
     table tr td{
         border-bottom: 0px;
         font-weight: 600;
-        color: var(--text);
+        color: #37444E;
     }
 }
 
@@ -660,8 +659,8 @@ table tr th{
     position: absolute;
     right: 20px;
     top: 20px;
-    background-color: var(--secondary-color);
-    border: 1px solid var(--secondary-color);
+    background-color: #F27AE4;
+    border: 1px solid #F27AE4;
 }
 
 @media (max-width: 1366px){
@@ -674,8 +673,8 @@ table tr th{
 }
 
 .content-button:hover{
-    border: 1px solid var(--secondary-color);
-    color: var(--secondary-color);
+    border: 1px solid #F27AE4;
+    color: #F27AE4;
     transition: 0.2s;
 }
 
@@ -683,8 +682,8 @@ table tr th{
     font-size: 12px;
     padding: 2px 15px;
     height: 30px;
-    background-color: var(--primary-color);
-    border: 1px solid var(--primary-color);
+    background-color: #7560FF;
+    border: 1px solid #7560FF;
 }
 
 table tr td .table-action{
@@ -707,7 +706,7 @@ table{
     input, select{
         display: block !important;
         background-color: white;
-        border: 1px solid var(--light-gray) !important;
+        border: 1px solid #EAEEF4 !important;
         padding: 5px 20px !important;
         height: 46px !important;
         -moz-box-sizing: border-box !important;
@@ -736,7 +735,7 @@ input[type="text"], input[type="email"], input[type="password"], select{
 @media (prefers-color-scheme: light){
     input[type="text"], input[type="email"], input[type="password"], select{
         margin-bottom: 25px;
-        color: var(--text-color);
+        color: #2F2860;
     }
 }
 
@@ -749,7 +748,7 @@ input[type="text"], input[type="email"], input[type="password"], select{
 
 input:focus, input:hover{
     outline: none;
-    border: 1px solid var(--primary-color) !important;
+    border: 1px solid #7560FF !important;
     transition: 0.2s;
 }
 
@@ -765,7 +764,7 @@ input:-webkit-autofill:active  {
         font-size: 16px;
         font-weight: 400;
         font-style: italic;
-        color: var(--text);
+        color: #37444E;
     }
 }
 
@@ -815,7 +814,7 @@ form{
     font-weight: 600;
     margin-bottom: 15px;
     display: inline-block;
-    border: 1px solid var(--primary-color);
+    border: 1px solid #7560FF;
     border-radius: 6px;
     padding: 5px 15px;
     background-color: #7560ff1c;
@@ -949,7 +948,7 @@ form{
     .login-box h1{
         font-size: 30px;
         font-weight: 600;
-        color: var(--text-color);
+        color: #2F2860;
         text-align: center;
     }
 }
