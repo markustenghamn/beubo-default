@@ -2,20 +2,6 @@
     <nav class="navigation">
         <section class="container">
 
-            <script type="text/javascript">
-                function showSidebar(){
-                    document.querySelector('.wrapper .row .sidebar').classList.remove('closed-on-mobile');
-                    document.querySelector('.open-sidebar').classList.add('hidden');
-                    document.querySelector('.close-sidebar').classList.remove('hidden');
-                }
-
-                function hideSidebar(){
-                    document.querySelector('.wrapper .row .sidebar').classList.add('closed-on-mobile');
-                    document.querySelector('.open-sidebar').classList.remove('hidden');
-                    document.querySelector('.close-sidebar').classList.add('hidden');
-                }
-            </script>
-
             <div class="left-header">
                 <div class="sidebar-toggler open-sidebar" onclick="showSidebar()">
                     <img src="/default/images/show-sidebar-light.svg">
@@ -25,7 +11,6 @@
                 </div>
 
                 <a class="navigation-title" href="/admin/">
-                    <!-- TODO insert logo? -->
                     <img class="logo-image logo-light" src="/default/images/logo-light.svg">
                     <img class="logo-image logo-dark" src="/default/images/logo-dark.svg">
                     <!--<h1 class="title">{{.WebsiteName}} - {{.Title}}</h1>-->

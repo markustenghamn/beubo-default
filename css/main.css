@@ -210,7 +210,7 @@ body {
 
     input, select {
         display: block !important;
-        background-color: transparent;
+        background-color: #2C294A !important;
         border: 1px solid #46425f !important;
         padding: 5px 20px !important;
         height: 46px !important;
